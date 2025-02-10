@@ -2,64 +2,69 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
   <title>Frontend Mentor | E-commerce product page</title>
-
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body class="product-page">
-
-  <header>
-    <button class="hamburger-menu" type="button"></button>
-    <a href="#">
-      <img src="images/logo.svg" alt="Sneaker Company logo" class="logo">
-    </a>
-    <button class="cart-button" type="button">
-      <img src="images/icon-cart.svg" alt="Shopping cart icon">
-    </button>
-    <button type="button" class="user-avatar"></button>
-  </header>
-
-  <div class="page product-page-content">
-    <div class="product-page__image full-width">
-      <img src="./images/image-product-1.jpg" alt="Sneaker">
-      <nav>
-        <button class="product-page__image--prev" type="button">
-          <img src="images/icon-previous.svg" alt="Previous image">
-        </button>
-        <button class="product-page__image--next" type="button">
-          <img src="images/icon-next.svg" alt="Next image">
-        </button>
-      </nav>
-    </div>
-
-    <div class="product-page__info">
-      <span class="eyebrow">Sneaker Company</span>
-      <h1>Fall Limited Edition Sneakers</h1>
-      <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
-
-      <div class="product-page__price">
-        <p class="product-page__price--new">$125.00</p>
-        <p class="product-page__price--old">$250.00</p>
-      </div>
-
-      <div class="product-page__quantity">
-        <p>Quantity</p>
-        <div class="product-page__quantity--buttons">
-          <button>-</button>
-          <p>0</p>
-          <button>+</button>
-        </div>
-      </div>
-
-      <button class="product-page__add-to-cart cta primary">
-        <span class="label">Add to cart</span>
+  <div class="page">
+    
+    <!-- HEADER -->
+    <header>
+      <button class="hamburger-menu" type="button"></button>
+      <a href="#">
+        <img src="images/logo.svg" alt="Sneaker Company logo" class="logo">
+      </a>
+      <button class="cart-button" type="button">
+        <img src="images/icon-cart.svg" alt="Shopping cart icon">
       </button>
-    </div>
+      <button type="button" class="user-avatar"></button>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+      <div class="product-page__image full-width">
+        <img src="./images/image-product-1.jpg" alt="Sneaker">
+        <nav>
+          <button class="product-page__image--prev" type="button">
+            <img src="images/icon-previous.svg" alt="Previous image">
+          </button>
+          <button class="product-page__image--next" type="button">
+            <img src="images/icon-next.svg" alt="Next image">
+          </button>
+        </nav>
+      </div>
+      <div class="product-page__info">
+        <span class="eyebrow">Sneaker Company</span>
+        <h1>Fall Limited Edition Sneakers</h1>
+        <p>These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="product-page__price">
+          <p class="product-page__price--new">$125.00</p>
+          <p class="product-page__price--old">$250.00</p>
+        </div>
+        <div class="product-page__quantity">
+          <p>Quantity</p>
+          <div class="product-page__quantity--buttons">
+            <button>-</button>
+            <p>0</p>
+            <button>+</button>
+          </div>
+        </div>
+        <button class="product-page__add-to-cart cta primary">
+          <span class="label">Add to cart</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      FOOTER PLACEHOLDER
+    </footer>
   </div>
+
+  
 
   <!-- Collections
   Men
@@ -81,9 +86,9 @@
   0
   Add to cart -->
   
-  <div class="attribution">
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>
