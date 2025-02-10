@@ -1,0 +1,177 @@
+/**
+ * Global styles
+ */
+
+:root {
+  --background-color: #ffffff;
+  --foreground-color: #000000;
+  --primary-color: #ffa500;
+  --roundness: .5rem;
+}
+
+body {
+  background-color: var(--background-color);
+  padding: 0;
+  margin: 0;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 16px;
+  color: var(--foreground-color);
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--background-color), 0 0 0 4px #3a97f9;
+}
+
+/**
+ * Root elements
+ */
+
+button {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+a {
+  border-radius: 2px;
+  transition: box-shadow 200ms ease;
+}
+
+.cta {
+  background-color: var(--cta-bg);
+  color: var(--cta-color, --foreground-color);
+  width: 100%;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: var(--roundness);
+  
+  &.primary {
+    --cta-bg: var(--primary-color);
+    --cta-color: var(--foreground-color);
+  }
+}
+
+/**
+ * Header
+ */
+
+header {
+  display: grid;
+  grid-template-columns: min-content min-content 1fr min-content;
+  align-items: anchor-center;
+  gap: 1rem;
+  padding: 24px;
+
+  .hamburger-menu {
+    width: 16px;
+    height: 16px;
+    background-image: url(../../images/icon-menu.svg);
+    background-repeat: no-repeat;
+  }
+
+  .cart-button {
+    justify-self: end;
+  }
+
+  .user-avatar {
+    width: 24px;
+    height: 24px;
+    background-image: url(../../images/image-avatar.png);
+    background-size: contain;
+  }
+}
+
+/**
+ * Page
+ */
+
+.page {
+  padding: 0 1.5rem;
+}
+
+.product-page-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.product-page__image {
+  display: grid;
+  grid-template-areas: "stack";
+  place-items: center;
+
+  > * {
+    grid-area: stack;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    > * {
+      flex: 0 1 auto;
+    }
+  }
+
+  .product-page__image--prev,
+  .product-page__image--next {
+    width: 48px;
+    height: 48px;
+    background-color: var(--background-color);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    margin: 16px;
+    padding: -16px;
+    box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.25);
+
+    img {
+      width: 13px;
+      height: 16px;
+    }
+  }
+  
+  .product-page__image--prev {
+    margin-left: 24px;
+  }
+  
+  .product-page__image--next {
+    margin-right: 24px;
+  }
+}
+
+/**
+ * Typography
+ */
+
+p {
+  font-size: 1.1rem;
+  color: #999999;
+  line-height: 1.5rem;
+}
+
+/**
+ * Utilities
+ */
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
