@@ -1,20 +1,34 @@
 /**
- * Global styles
+ * Config
  */
 
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+
 :root {
-  --background-color: #ffffff;
-  --foreground-color: #000000;
-  --primary-color: #ffa500;
-  --roundness: .5rem;
+  --white: #ffffff;
+  --black: #000000;
+  --brand-yellow: #ffa500;
+  --brand-yellow: hsl(26, 100%, 55%);
+  --background-color: var(--white);
+  --foreground-color: var(--black);
+  --primary-color: var(--brand-yellow);
+  --roundness: 0.5rem;
 }
+
+/**
+ * Global styles
+ */
 
 body {
   background-color: var(--background-color);
   padding: 0;
   margin: 0;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
   font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "YOPQ" 300;
   color: var(--foreground-color);
 }
 
@@ -24,19 +38,31 @@ body {
 }
 
 /**
- * Root elements
- */
+* Root elements
+*/
 
 button {
+  font-family: "Kumbh Sans", sans-serif;
   border: none;
   padding: 0;
   cursor: pointer;
+  background-color: transparent;
 }
 
 a {
   border-radius: 2px;
   transition: box-shadow 200ms ease;
 }
+
+p {
+  font-size: 1.1rem;
+  color: #999999;
+  line-height: 1.5rem;
+}
+
+/**
+ * Components
+ */
 
 .cta {
   background-color: var(--cta-bg);
@@ -50,13 +76,12 @@ a {
   font-size: 1rem;
   font-weight: bold;
   border-radius: var(--roundness);
-  
+
   &.primary {
     --cta-bg: var(--primary-color);
     --cta-color: var(--foreground-color);
   }
 }
-
 
 /**
  * Layout
@@ -73,7 +98,7 @@ body {
   min-block-size: 100vh;
   min-block-size: 100dvh;
   grid-template-rows: auto 1fr auto;
-  grid-template-areas: 'header' 'main' 'footer';
+  grid-template-areas: "header" "main" "footer";
   max-width: 1296px;
 
   header {
@@ -89,7 +114,6 @@ body {
   }
 }
 
-
 /**
  * Header
  */
@@ -97,7 +121,7 @@ body {
 header {
   display: grid;
   grid-template-columns: min-content min-content 1fr min-content;
-  align-items: anchor-center;
+  align-items: center;
   gap: 1rem;
   padding: 24px;
 
@@ -124,11 +148,80 @@ header {
  * Page
  */
 
- .product-page {
+.product-page {
   .content {
     display: grid;
     grid-template-rows: min-content 1fr;
     gap: 1.5rem;
+  }
+
+  .eyebrow {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 800;
+    color: #888;
+  }
+
+  .heading-1 {
+    font-size: 28px;
+  }
+
+  .body-text {
+    font-size: 15px;
+    line-height: 23px;
+  }
+
+  .price-container {
+    display: grid;
+    grid-template-columns: max-content max-content 1fr;
+    gap: 1rem;
+    align-items: center;
+
+    .current-price {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .discount {
+      background-color: var(--foreground-color);
+      border-radius: var(--roundness);
+      color: var(--white);
+      padding: 3px 10px;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .old-price {
+      justify-self: flex-end;
+      text-decoration: line-through;
+      font-size: 17px;
+      font-weight: 700;
+      color: #888888;
+    }
+  }
+
+  .quantity-picker {
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    background-color: #efefef;
+    border-radius: var(--roundness);
+    font-size: 23px;
+    font-weight: 700;
+
+    button {
+      font-size: 27px;
+      font-weight: 700;
+      color: var(--primary-color);
+      padding: 8px 17px;
+    }
+
+    .value {
+      justify-self: center;
+      align-self: center;
+      font-size: 17px;
+    }
   }
 
   .product-page__image {
@@ -141,26 +234,26 @@ header {
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-  
+
     > * {
       grid-area: stack;
     }
-  
+
     img {
       width: 100%;
       height: auto;
     }
-  
+
     nav {
       display: flex;
       width: 100%;
       justify-content: space-between;
-  
+
       > * {
         flex: 0 1 auto;
       }
     }
-  
+
     .product-page__image--prev,
     .product-page__image--next {
       width: 48px;
@@ -173,17 +266,17 @@ header {
       margin: 16px;
       padding: -16px;
       box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.25);
-  
+
       img {
         width: 13px;
         height: 16px;
       }
     }
-    
+
     .product-page__image--prev {
       margin-left: 24px;
     }
-    
+
     .product-page__image--next {
       margin-right: 24px;
     }
@@ -191,6 +284,8 @@ header {
 
   .product-page__info {
     padding: 0 1.5rem;
+    display: grid;
+    gap: 1rem;
   }
 }
 
@@ -200,7 +295,7 @@ header {
       grid-template-columns: 1fr 1fr;
       gap: 0rem;
     }
-    
+
     .product-page__image {
       width: 100%;
       margin: 0;
@@ -213,15 +308,4 @@ header {
       padding: 0 2.5rem;
     }
   }
-}
-
-
-/**
- * Typography
- */
-
-p {
-  font-size: 1.1rem;
-  color: #999999;
-  line-height: 1.5rem;
 }
