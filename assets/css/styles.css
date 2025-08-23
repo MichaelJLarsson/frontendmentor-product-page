@@ -15,6 +15,13 @@
   --roundness: 0.5rem;
 }
 
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+}
+
 /**
  * Global styles
  */
@@ -83,6 +90,17 @@ p {
     --cta-color: var(--foreground-color);
     --cta-shadow: var(--brand-yellow-weak);
   }
+}
+
+.heading-1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.body-text {
+  font-size: 15px;
+  line-height: 1.7em;
+  margin: 0;
 }
 
 /**
@@ -165,20 +183,12 @@ header {
     color: #888;
   }
 
-  .heading-1 {
-    font-size: 28px;
-  }
-
-  .body-text {
-    font-size: 15px;
-    line-height: 23px;
-  }
-
   .price-container {
     display: grid;
     grid-template-columns: max-content max-content 1fr;
     gap: 1rem;
     align-items: center;
+    margin: var(--space-2) 0;
 
     .current-price {
       font-size: 28px;
