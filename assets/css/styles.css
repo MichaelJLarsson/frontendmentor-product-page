@@ -35,7 +35,12 @@
   --space-10: 192px;
   --space-11: 256px;
 
-  --roundness: 0.5rem;
+  --roundness-1: var(--space-1);
+  --roundness-2: var(--space-2);
+  --roundness-3: var(--space-3);
+  --roundness-4: var(--space-4);
+  --roundness-5: var(--space-5);
+  --roundness-6: var(--space-6);
 }
 
 /**
@@ -116,7 +121,7 @@ nav ul {
   align-items: center;
   font-size: 1rem;
   font-weight: bold;
-  border-radius: var(--roundness);
+  border-radius: var(--roundness-2);
   box-shadow: 0px 14px 26px var(--cta-shadow);
 
   &.primary {
@@ -132,6 +137,7 @@ nav ul {
 }
 
 .body-text {
+  grid-area: body-text;
   font-size: 15px;
   line-height: 1.7em;
   margin: 0;
@@ -217,6 +223,7 @@ header {
   }
 
   .eyebrow {
+    grid-area: eyebrow;
     text-transform: uppercase;
     font-size: 12px;
     letter-spacing: 2px;
@@ -225,6 +232,7 @@ header {
   }
 
   .price-container {
+    grid-area: price-container;
     display: grid;
     grid-template-columns: max-content max-content 1fr;
     gap: 1rem;
@@ -239,7 +247,7 @@ header {
 
     .discount {
       background-color: var(--foreground-color);
-      border-radius: var(--roundness);
+      border-radius: var(--roundness-2);
       color: var(--white);
       padding: 3px 10px;
       font-weight: 500;
@@ -257,9 +265,10 @@ header {
 
   .quantity-picker {
     display: grid;
+    grid-area: quantity-picker;
     grid-template-columns: max-content 1fr max-content;
     background-color: var(--grey-lighter);
-    border-radius: var(--roundness);
+    border-radius: var(--roundness-2);
     font-size: 23px;
     font-weight: 700;
 
@@ -278,6 +287,7 @@ header {
   }
 
   .cta {
+    grid-area: atc;
     gap: 14px;
     .icon {
       width: 16px;
@@ -338,6 +348,7 @@ header {
       img {
         width: 13px;
         height: 16px;
+        border-radius: var(--roundness-2);
       }
     }
 
@@ -363,6 +374,13 @@ header {
 }
 
 @media screen and (min-width: 768px) {
+  .heading-1 {
+    grid-area: heading;
+    font-size: var(--space-6);
+    line-height: 1.1;
+    margin-bottom: var(--space-3);
+  }
+
   .tablet-portrait {
     display: block;
   }
@@ -405,10 +423,26 @@ header {
       left: auto;
       right: auto;
       align-content: baseline;
+      border-radius: var(--roundness-3);
+      overflow: hidden;
     }
 
     .product-page__info {
-      padding: 0;
+      padding: var(--space-7) 0 0;
+      grid-template-areas:
+        "eyebrow eyebrow"
+        "heading heading"
+        "body-text body-text"
+        "price-container price-container"
+        "quantity-picker atc";
+    }
+
+    .price-container {
+      grid-template-columns: max-content max-content;
+
+      .old-price {
+        justify-self: flex-start;
+      }
     }
   }
 }
