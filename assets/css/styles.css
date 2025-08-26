@@ -7,6 +7,7 @@
 :root {
   --white: #ffffff;
   --black: #000000;
+  --light-grey: #999999;
   --brand-yellow: hsl(26, 100%, 55%);
   --brand-yellow-weak: hsl(26, 100%, 85%);
   --background-color: var(--white);
@@ -59,11 +60,12 @@ button {
 a {
   border-radius: 2px;
   transition: box-shadow 200ms ease;
+  text-decoration: none;
 }
 
 p {
   font-size: 1.1rem;
-  color: #999999;
+  color: var(--light-grey);
   line-height: 1.5rem;
 }
 
@@ -128,7 +130,7 @@ body {
   min-block-size: 100dvh;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "header" "main" "footer";
-  max-width: 1296px;
+  max-width: 1115px;
 
   header {
     grid-area: header;
@@ -171,6 +173,13 @@ header {
     background-image: url(../../images/image-avatar.png);
     background-size: contain;
   }
+
+  .main-navigation {
+    a {
+      font-size: 0.9375rem;
+      color: var(--light-grey);
+    }
+  }
 }
 
 /**
@@ -189,7 +198,7 @@ header {
     font-size: 12px;
     letter-spacing: 2px;
     font-weight: 800;
-    color: #888;
+    color: var(--light-grey);
   }
 
   .price-container {
@@ -219,7 +228,7 @@ header {
       text-decoration: line-through;
       font-size: 17px;
       font-weight: 700;
-      color: #888888;
+      color: var(--light-grey);
     }
   }
 
@@ -341,12 +350,20 @@ header {
 
   header {
     border-bottom: 1px solid #eee;
+    padding: 0;
+    gap: 3.25rem;
+    height: 110px;
+
+    .user-avatar {
+      width: 3rem;
+      height: 3rem;
+    }
   }
 
   .main-navigation {
     ul {
       display: flex;
-      gap: 1rem;
+      gap: 2.1875rem; /* 35px */
     }
   }
 
