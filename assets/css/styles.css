@@ -18,6 +18,14 @@
   --background-color: var(--white);
   --foreground-color: var(--dark-grey);
   --primary-color: var(--brand-yellow);
+
+  /* Font sizes */
+  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-sm: 0.9375rem; /* 15px */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-md: 1.4375rem; /* 23px */
+  --font-size-lg: 1.75rem; /* 28px */
+  --font-size-2xl: 2.625rem; /* 42px */
 }
 
 /* Sizes */
@@ -53,7 +61,7 @@ body {
   margin: 0;
   font-family: "Kumbh Sans", sans-serif;
   font-optical-sizing: auto;
-  font-size: 16px;
+  font-size: var(--font-size-base);
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "YOPQ" 300;
@@ -92,7 +100,7 @@ h5 {
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: var(--font-size-base);
   color: var(--light-grey);
   line-height: 1.5rem;
 }
@@ -119,7 +127,7 @@ nav ul {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 1rem;
+  font-size: var(--font-size-base);
   font-weight: bold;
   border-radius: var(--roundness-2);
   box-shadow: 0px 14px 26px var(--cta-shadow);
@@ -132,7 +140,7 @@ nav ul {
 }
 
 .heading-1 {
-  font-size: 28px;
+  font-size: var(--font-size-2xl);
   font-weight: 700;
   margin: 0;
   line-height: 1.1;
@@ -140,8 +148,8 @@ nav ul {
 
 .body-text {
   grid-area: body-text;
-  font-size: 15px;
-  line-height: 1.7em;
+  font-size: var(--font-size-base);
+  line-height: 1.7;
   margin: 0;
 }
 
@@ -212,7 +220,7 @@ header {
 
   .main-navigation {
     a {
-      font-size: 0.9375rem;
+      font-size: var(--font-size-sm);
       color: var(--light-grey);
     }
   }
@@ -333,9 +341,9 @@ header {
   .eyebrow {
     grid-area: eyebrow;
     text-transform: uppercase;
-    font-size: 12px;
+    font-size: var(--font-size-xs);
     letter-spacing: 2px;
-    font-weight: 800;
+    font-weight: 700;
     color: var(--light-grey);
   }
 
@@ -354,7 +362,7 @@ header {
     margin: var(--space-2) 0;
 
     .current-price {
-      font-size: 28px;
+      font-size: var(--font-size-lg);
       font-weight: 700;
       color: var(--black);
     }
@@ -365,13 +373,13 @@ header {
       color: var(--white);
       padding: 3px 10px;
       font-weight: 500;
-      font-size: 15px;
+      font-size: var(--font-size-sm);
     }
 
     .old-price {
       justify-self: flex-end;
       text-decoration: line-through;
-      font-size: 17px;
+      font-size: var(--font-size-base);
       font-weight: 700;
       color: var(--light-grey);
     }
@@ -383,11 +391,11 @@ header {
     grid-template-columns: max-content 1fr max-content;
     background-color: var(--grey-lighter);
     border-radius: var(--roundness-2);
-    font-size: 23px;
+    font-size: var(--font-size-xl);
     font-weight: 700;
 
     button {
-      font-size: 27px;
+      font-size: var(--font-size-3xl);
       font-weight: 700;
       color: var(--primary-color);
       padding: 8px 17px;
@@ -396,7 +404,7 @@ header {
     .value {
       justify-self: center;
       align-self: center;
-      font-size: 17px;
+      font-size: var(--font-size-base);
     }
   }
 
@@ -417,14 +425,10 @@ header {
   }
 }
 
-/**
- * Util classes
- */
-
 @media screen and (min-width: 768px) {
   .heading-1 {
     grid-area: heading;
-    font-size: 2.625rem;
+    font-size: var(--font-size-2xl);
     margin-bottom: var(--space-4);
   }
 
