@@ -192,7 +192,12 @@ header {
     background-repeat: no-repeat;
   }
 
+  .logo {
+    width: 140px;
+  }
+
   .cart-button {
+    width: 20px;
     justify-self: end;
   }
 
@@ -235,7 +240,6 @@ header {
     }
 
     nav {
-      display: flex;
       grid-area: stack;
       width: 100%;
       justify-content: space-between;
@@ -246,7 +250,6 @@ header {
     }
 
     .thumbnails {
-      display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
       gap: var(--space-5);
 
@@ -412,24 +415,12 @@ header {
  * Util classes
  */
 
-.tablet-portrait {
-  display: none !important;
-}
-
 @media screen and (min-width: 768px) {
   .heading-1 {
     grid-area: heading;
     font-size: 2.5rem;
     line-height: 1.1;
     margin-bottom: var(--space-4);
-  }
-
-  .tablet-portrait {
-    display: block;
-  }
-
-  .mobile-only {
-    display: none !important;
   }
 
   header {

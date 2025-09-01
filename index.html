@@ -13,6 +13,7 @@
       href="./images/favicon-32x32.png"
     />
     <title>Frontend Mentor | E-commerce product page</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link
       rel="stylesheet"
       href="assets/css/styles.css"
@@ -24,18 +25,20 @@
       <!-- HEADER -->
       <header>
         <button
-          class="hamburger-menu mobile-only"
+          class="hamburger-menu md:hidden"
           type="button"
           aria-label="Menu"
         ></button>
-        <a href="#">
+        <a
+          href="#"
+          class="logo"
+        >
           <img
             src="images/logo.svg"
             alt="Sneaker Company logo"
-            class="logo"
           />
         </a>
-        <nav class="main-navigation tablet-portrait">
+        <nav class="main-navigation hidden md:grid">
           <ul>
             <li><a href="#">Collections</a></li>
             <li><a href="#">Men</a></li>
@@ -56,6 +59,7 @@
         <button
           type="button"
           class="user-avatar"
+          aria-label="User avatar"
         ></button>
       </header>
 
@@ -67,7 +71,7 @@
             alt="Sneaker"
             class="hero-image"
           />
-          <nav class="mobile-only">
+          <nav class="flex md:hidden">
             <button
               class="product-page__image--prev"
               type="button"
@@ -87,7 +91,7 @@
               />
             </button>
           </nav>
-          <div class="thumbnails tablet-portrait">
+          <div class="thumbnails hidden md:grid">
             <a
               href="#"
               class="thumbnail active"
