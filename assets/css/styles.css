@@ -25,7 +25,7 @@
   --font-size-base: 1rem; /* 16px */
   --font-size-md: 1.4375rem; /* 23px */
   --font-size-lg: 1.75rem; /* 28px */
-  --font-size-2xl: 2.625rem; /* 42px */
+  --font-size-xl: 2.625rem; /* 42px */
 }
 
 /* Sizes */
@@ -140,7 +140,12 @@ nav ul {
 }
 
 .heading-1 {
-  font-size: var(--font-size-2xl);
+  /* font-size: var(--font-size-xl); */
+  font-size: clamp(
+    var(--font-size-lg),
+    1.3066rem + 1.8919vw,
+    var(--font-size-xl)
+  );
   font-weight: 700;
   margin: 0;
   line-height: 1.1;
@@ -148,7 +153,11 @@ nav ul {
 
 .body-text {
   grid-area: body-text;
-  font-size: var(--font-size-base);
+  font-size: clamp(
+    var(--font-size-sm),
+    0.9058rem + 0.1351vw,
+    var(--font-size-base)
+  );
   line-height: 1.7;
   margin: 0;
 }
@@ -428,7 +437,7 @@ header {
 @media screen and (min-width: 768px) {
   .heading-1 {
     grid-area: heading;
-    font-size: var(--font-size-2xl);
+    /* font-size: var(--font-size-xl); */
     margin-bottom: var(--space-4);
   }
 
