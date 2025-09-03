@@ -3,6 +3,7 @@
  */
 
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+@import "https://unpkg.com/open-props/easings.min.css";
 
 /* Color system */
 
@@ -160,6 +161,80 @@ nav ul {
   );
   line-height: 1.7;
   margin: 0;
+}
+
+:root {
+  --easing-in-out-assymetric: cubic-bezier(0.2, 0, 0, 1);
+}
+
+.tint {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--black);
+  z-index: 10;
+  animation: fade-in 400ms var(--easing-in-out-assymetric);
+  opacity: 0.75;
+
+  &.closing {
+    opacity: 0;
+    animation: fade-out 300ms var(--easing-in-out-assymetric);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 0.75;
+  }
+}
+
+.sidepanel {
+  --panel-width: 70%;
+
+  position: absolute;
+  top: 0;
+  left: calc(var(--panel-width) * -1);
+  bottom: 0;
+  width: var(--panel-width);
+  background-color: var(--white);
+  z-index: 20;
+  padding: var(--space-4);
+  transition-property: transform;
+  transition-duration: 350ms;
+  transition-timing-function: var(--easing-in-out-assymetric);
+
+  &.open {
+    transform: translateX(100%);
+    transition-duration: 650ms;
+  }
+
+  .close {
+    font-weight: 700;
+    color: var(--light-grey);
+    padding: var(--space-2);
+    margin: calc(-1 * var(--space-2));
+    line-height: 1;
+  }
+
+  .main-menu {
+    margin-top: var(--space-5);
+    font-size: 19px;
+    color: var(--black);
+    font-weight: 700;
+    line-height: 2.5;
+
+    a {
+      display: block;
+    }
+  }
 }
 
 /**
@@ -408,7 +483,7 @@ header {
     button {
       color: var(--primary-color);
       height: 100%;
-      padding-bottom: 8px;
+      padding-bottom: 8px; /* To vertically center glyphs */
     }
 
     .value {
