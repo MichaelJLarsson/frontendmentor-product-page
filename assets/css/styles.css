@@ -5,9 +5,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
 @import "https://unpkg.com/open-props/easings.min.css";
 
-/* Color system */
-
 :root {
+  /* Page size */
+  --page-min-w: 375;
+  --page-max-w: 1115;
+
+  /* Color system */
   --white: #ffffff;
   --black: #000000;
   --dark-grey: #1d1c20;
@@ -21,17 +24,33 @@
   --primary-color: var(--brand-yellow);
 
   /* Font sizes */
-  --font-size-xs: 0.75rem; /* 12px */
+  --font-size-root: 16;
+  --font-size-xs-int: 0.75;
+  --font-size-base-int: 1;
+  --font-size-lg-int: 1.75;
+  --font-size-xl-int: 2.625;
+
+  --font-size-xs: (var(--font-size-xs-int) * 1rem); /* 12px */
   --font-size-sm: 0.9375rem; /* 15px */
-  --font-size-base: 1rem; /* 16px */
+  --font-size-base: (var(--font-size-base-int * 1rem)); /* 16px */
   --font-size-md: 1.4375rem; /* 23px */
-  --font-size-lg: 1.75rem; /* 28px */
-  --font-size-xl: 2.625rem; /* 42px */
-}
+  --font-size-lg: (var(--font-size-lg-int) * 1rem); /* 28px */
+  --font-size-xl: (var(--font-size-xl-int) * 1rem); /* 42px */
 
-/* Sizes */
+  /* Fluid font sizes */
+  --min-fs: var(--font-size-xs-int);
+  --max-fs: var(--font-size-base-int);
+  --min-vw: (var(--page-min-w) / var(--font-size-root));
+  --max-vw: (var(--page-max-w) / var(--font-size-root));
 
-:root {
+  --min-fs-rem: var(--min-fs) * 1rem;
+  --max-fs-rem: var(--max-fs) * 1rem;
+  --min-vw-rem: var(--min-vw) * 1rem;
+
+  --slope: (var(--max-fs) - var(--min-fs)) * (100vw - var(--min-vw-rem)) /
+    (var(--max-vw) - var(--min-vw));
+
+  /* Sizes */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 16px;
@@ -44,6 +63,7 @@
   --space-10: 192px;
   --space-11: 256px;
 
+  /* Rounding */
   --roundness-1: var(--space-1);
   --roundness-2: var(--space-2);
   --roundness-3: var(--space-3);
@@ -53,8 +73,8 @@
 }
 
 /**
- * Global styles
- */
+  * Global styles
+  */
 
 body {
   background-color: var(--background-color);
@@ -62,7 +82,11 @@ body {
   margin: 0;
   font-family: "Kumbh Sans", sans-serif;
   font-optical-sizing: auto;
-  font-size: var(--font-size-base);
+  font-size: clamp(
+    var(--min-fs-rem),
+    var(--min-fs-rem) + var(--slope),
+    var(--max-fs-rem)
+  );
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "YOPQ" 300;
@@ -141,11 +165,19 @@ nav ul {
 }
 
 .heading-1 {
-  /* font-size: var(--font-size-xl); */
+  --min-fs: var(--font-size-lg-int);
+  --max-fs: var(--font-size-xl-int);
+
+  --min-fs-rem: (var(--min-fs) * 1rem);
+  --max-fs-rem: (var(--max-fs) * 1rem);
+
+  --slope: (var(--max-fs) - var(--min-fs)) * (100vw - var(--min-vw-rem)) /
+    (var(--max-vw) - var(--min-vw));
+
   font-size: clamp(
-    var(--font-size-lg),
-    1.3066rem + 1.8919vw,
-    var(--font-size-xl)
+    var(--min-fs-rem),
+    var(--min-fs-rem) + var(--slope),
+    var(--max-fs-rem)
   );
   font-weight: 700;
   margin: 0;
