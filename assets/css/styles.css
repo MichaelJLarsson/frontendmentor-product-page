@@ -446,8 +446,7 @@ header {
       "heading heading"
       "body-text body-text"
       "price-container price-container"
-      "quantity-picker quantity-picker"
-      "atc atc";
+      "add-to-cart-container add-to-cart-container";
   }
 
   .heading-1 {
@@ -499,6 +498,10 @@ header {
       font-weight: 700;
       color: var(--light-grey);
     }
+  }
+
+  .add-to-cart-container {
+    grid-area: add-to-cart-container;
   }
 
   .quantity-picker {
@@ -596,7 +599,7 @@ header {
         "heading heading"
         "body-text body-text"
         "price-container price-container"
-        "quantity-picker atc";
+        "add-to-cart-container add-to-cart-container";
       grid-template-columns: 35% 1fr;
     }
 
