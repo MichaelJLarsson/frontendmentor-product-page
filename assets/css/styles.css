@@ -7,8 +7,8 @@
 
 :root {
   /* Page size */
-  --page-min-w: 375;
-  --page-max-w: 1115;
+  --page-min-w: 375px;
+  --page-max-w: 1115px;
 
   /* Color system */
   --white: #ffffff;
@@ -24,31 +24,12 @@
   --primary-color: var(--brand-yellow);
 
   /* Font sizes */
-  --font-size-root: 16;
-  --font-size-xs-int: 0.75;
-  --font-size-base-int: 1;
-  --font-size-lg-int: 1.75;
-  --font-size-xl-int: 2.625;
-
-  --font-size-xs: (var(--font-size-xs-int) * 1rem); /* 12px */
+  --font-size-xs: 0.75rem; /* 12px */
   --font-size-sm: 0.9375rem; /* 15px */
-  --font-size-base: (var(--font-size-base-int * 1rem)); /* 16px */
+  --font-size-base: 1rem; /* 16px */
   --font-size-md: 1.4375rem; /* 23px */
-  --font-size-lg: (var(--font-size-lg-int) * 1rem); /* 28px */
-  --font-size-xl: (var(--font-size-xl-int) * 1rem); /* 42px */
-
-  /* Fluid font sizes */
-  --min-fs: var(--font-size-xs-int);
-  --max-fs: var(--font-size-base-int);
-  --min-vw: (var(--page-min-w) / var(--font-size-root));
-  --max-vw: (var(--page-max-w) / var(--font-size-root));
-
-  --min-fs-rem: var(--min-fs) * 1rem;
-  --max-fs-rem: var(--max-fs) * 1rem;
-  --min-vw-rem: var(--min-vw) * 1rem;
-
-  --slope: (var(--max-fs) - var(--min-fs)) * (100vw - var(--min-vw-rem)) /
-    (var(--max-vw) - var(--min-vw));
+  --font-size-lg: 1.75rem; /* 28px */
+  --font-size-xl: 2.625rem; /* 42px */
 
   /* Sizes */
   --space-1: 4px;
@@ -82,11 +63,7 @@ body {
   margin: 0;
   font-family: "Kumbh Sans", sans-serif;
   font-optical-sizing: auto;
-  font-size: clamp(
-    var(--min-fs-rem),
-    var(--min-fs-rem) + var(--slope),
-    var(--max-fs-rem)
-  );
+  font-size: var(--font-size-sm);
   font-weight: 400;
   font-style: normal;
   font-variation-settings: "YOPQ" 300;
@@ -165,19 +142,10 @@ nav ul {
 }
 
 .heading-1 {
-  --min-fs: var(--font-size-lg-int);
-  --max-fs: var(--font-size-xl-int);
-
-  --min-fs-rem: (var(--min-fs) * 1rem);
-  --max-fs-rem: (var(--max-fs) * 1rem);
-
-  --slope: (var(--max-fs) - var(--min-fs)) * (100vw - var(--min-vw-rem)) /
-    (var(--max-vw) - var(--min-vw));
-
   font-size: clamp(
-    var(--min-fs-rem),
-    var(--min-fs-rem) + var(--slope),
-    var(--max-fs-rem)
+    var(--font-size-lg),
+    1.3066rem + 1.8919vw,
+    var(--font-size-xl)
   );
   font-weight: 700;
   margin: 0;
@@ -285,7 +253,7 @@ body {
   min-block-size: 100dvh;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "header" "main" "footer";
-  max-width: 1115px;
+  max-width: var(--page-max-w);
 
   header {
     grid-area: header;
@@ -456,7 +424,11 @@ header {
   .eyebrow {
     grid-area: eyebrow;
     text-transform: uppercase;
-    font-size: var(--font-size-xs);
+    font-size: clamp(
+      var(--font-size-xs),
+      0.655rem + 0.4054vw,
+      var(--font-size-sm)
+    );
     letter-spacing: 2px;
     font-weight: 700;
     color: var(--light-grey);
@@ -548,7 +520,6 @@ header {
 @media screen and (min-width: 768px) {
   .heading-1 {
     grid-area: heading;
-    /* font-size: var(--font-size-xl); */
     margin-bottom: var(--space-4);
   }
 
