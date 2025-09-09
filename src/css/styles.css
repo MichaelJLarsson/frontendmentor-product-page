@@ -242,6 +242,10 @@ body {
   justify-content: center;
 }
 
+#root {
+  width: 100%;
+}
+
 .page {
   margin: 0;
   padding: 0 0 3rem;
@@ -316,12 +320,6 @@ header {
     display: grid;
     grid-template-areas: "stack";
     place-items: center;
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
     gap: var(--space-5);
 
     .hero-image {
@@ -411,6 +409,7 @@ header {
       "heading heading"
       "body-text body-text"
       "price-container price-container"
+      "quantity-picker quantity-picker"
       "add-to-cart-container add-to-cart-container";
   }
 
@@ -498,7 +497,6 @@ header {
   }
 
   .cta {
-    grid-area: atc;
     gap: 14px;
     .icon {
       width: 16px;
@@ -509,6 +507,25 @@ header {
         path {
           fill: var(--foreground-color);
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 512px) {
+  .product-page {
+    .product-page__info {
+      grid-template-areas:
+        "eyebrow eyebrow"
+        "heading heading"
+        "body-text body-text"
+        "price-container price-container"
+        "quantity-picker add-to-cart-container";
+    }
+    .price-container {
+      grid-template-columns: max-content max-content;
+      .old-price {
+        justify-self: flex-start;
       }
     }
   }

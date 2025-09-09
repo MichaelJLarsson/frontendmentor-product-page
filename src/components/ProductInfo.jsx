@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const ProductInfo = () => {
   return (
@@ -7,8 +7,8 @@ const ProductInfo = () => {
       <h1 className="heading-1">Fall Limited Edition Sneakers</h1>
       <p className="body-text">
         These low-profile sneakers are your perfect casual wear companion.
-        Featuring a durable rubber outer sole, they'll withstand everything
-        the weather can offer.
+        Featuring a durable rubber outer sole, they'll withstand everything the
+        weather can offer.
       </p>
       <div className="price-container">
         <span className="current-price">$125.00</span>
@@ -20,7 +20,7 @@ const ProductInfo = () => {
         <span className="value">0</span>
         <button>+</button>
       </div>
-      <button className="product-page__add-to-cart cta primary">
+      <button className="product-page__add-to-cart cta primary add-to-cart-container">
         <span className="icon">
           <svg
             width="22"
