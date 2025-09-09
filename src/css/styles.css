@@ -584,6 +584,7 @@ header {
         "heading heading"
         "body-text body-text"
         "price-container price-container"
+        "quantity-picker quantity-picker"
         "add-to-cart-container add-to-cart-container";
       grid-template-columns: 35% 1fr;
     }
@@ -594,6 +595,19 @@ header {
       .old-price {
         justify-self: flex-start;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .page {
+    .product-page__info {
+      grid-template-areas:
+        "eyebrow eyebrow"
+        "heading heading"
+        "body-text body-text"
+        "price-container price-container"
+        "quantity-picker add-to-cart-container";
     }
   }
 }
