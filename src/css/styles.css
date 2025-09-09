@@ -165,7 +165,7 @@ nav ul {
 }
 
 .tint {
-  position: absolute;
+  position: fixed;
   left: 0;
   right: 0;
   top: 0;
@@ -196,7 +196,7 @@ nav ul {
 .sidepanel {
   --panel-width: 70%;
 
-  position: absolute;
+  position: fixed;
   top: 0;
   left: calc(var(--panel-width) * -1);
   bottom: 0;
