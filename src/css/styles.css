@@ -244,6 +244,7 @@ body {
 
 #root {
   width: 100%;
+  max-width: var(--page-max-w);
 }
 
 .page {
@@ -254,7 +255,6 @@ body {
   min-block-size: 100dvh;
   grid-template-rows: auto 1fr auto;
   grid-template-areas: "header" "main" "footer";
-  max-width: var(--page-max-w);
 
   header {
     grid-area: header;
@@ -540,7 +540,7 @@ header {
   header {
     border-bottom: 1px solid var(--grey-lighter);
     padding: 0;
-    gap: var(--space-6);
+    gap: clamp(var(--space-4), -1.8199rem + 6.9164vw, var(--space-6));
     height: 110px;
 
     .user-avatar {
