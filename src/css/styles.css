@@ -2,9 +2,6 @@
  * Config
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
-@import "https://unpkg.com/open-props/easings.min.css";
-
 :root {
   /* Page size */
   --page-min-w: 375px;

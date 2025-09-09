@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+@import "https://unpkg.com/open-props/easings.min.css";
 @import "tailwindcss";
-
-/* Import the existing styles */
-@import url("/assets/css/styles.css");
 @import "tw-animate-css";
+@import "@/css/styles.css";
 
 @custom-variant dark (&:is(.dark *));
 
