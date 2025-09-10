@@ -1,3 +1,6 @@
+@import "open-props/shadows";
+@import "open-props/gray";
+
 /**
  * Config
  */
@@ -48,6 +51,9 @@
   --roundness-4: var(--space-4);
   --roundness-5: var(--space-5);
   --roundness-6: var(--space-6);
+
+  /* Box shadow */
+  --shadow-strength: 5%;
 }
 
 /**
@@ -96,6 +102,7 @@ h3,
 h4,
 h5 {
   color: var(--foreground-color);
+  font-weight: 700;
 }
 
 p {
@@ -230,6 +237,25 @@ nav ul {
 
     a {
       display: block;
+    }
+  }
+}
+
+.shopping-cart {
+  border-radius: var(--space-2);
+  box-shadow: var(--shadow-5);
+
+  .cart-block {
+    padding: var(--space-4);
+  }
+
+  .cart-header {
+    border-bottom: 1px solid var(--gray-3);
+  }
+
+  .cart-body {
+    p {
+      color: var(--gray-6);
     }
   }
 }

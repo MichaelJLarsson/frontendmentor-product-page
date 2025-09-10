@@ -3,10 +3,18 @@ import Sidebar from "@/components/Sidebar";
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(true);
+
   const handleMenuClick = (ev) => {
     ev.preventDefault();
-    setIsSidebarOpen(isSidebarOpen ? false : true);
+    setIsSidebarOpen(!isSidebarOpen);
   };
+
+  const handleCartClick = (ev) => {
+    ev.preventDefault();
+    setIsCartOpen(!isCartOpen);
+  };
+
   return (
     <header>
       <button
@@ -46,6 +54,7 @@ const Header = () => {
       <button
         className="cart-button"
         type="button"
+        onClick={handleCartClick}
       >
         <img
           src="/images/icon-cart.svg"
@@ -56,11 +65,23 @@ const Header = () => {
         type="button"
         className="user-avatar"
         aria-label="User avatar"
-      ></button>
+      />
       <Sidebar
         open={isSidebarOpen}
         handleClose={handleMenuClick}
       />
+
+      {/* Shopping cart */}
+      <div className="shopping-cart absolute top-3 bg-white top-20 left-3 right-3">
+        <div className="cart-block cart-header">
+          <h3>Cart</h3>
+        </div>
+        <div className="cart-block cart-body flex justify-center items-center min-h-[200px]">
+          <p>
+            <strong>Your cart is empty.</strong>
+          </p>
+        </div>
+      </div>
     </header>
   );
 };
