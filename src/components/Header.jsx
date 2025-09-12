@@ -3,16 +3,10 @@ import Sidebar from "@/components/Sidebar";
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(true);
 
   const handleMenuClick = (ev) => {
     ev.preventDefault();
     setIsSidebarOpen(!isSidebarOpen);
-  };
-
-  const handleCartClick = (ev) => {
-    ev.preventDefault();
-    setIsCartOpen(!isCartOpen);
   };
 
   return (
@@ -54,7 +48,7 @@ const Header = () => {
       <button
         className="cart-button"
         type="button"
-        onClick={handleCartClick}
+        popovertarget="shopping-cart"
       >
         <img
           src="/images/icon-cart.svg"
@@ -73,8 +67,8 @@ const Header = () => {
 
       {/* Shopping cart */}
       <dialog
-        closedBy="any"
-        open={isCartOpen}
+        popover=""
+        id="shopping-cart"
         className="shopping-cart absolute top-3 bg-white top-20"
       >
         <div className="cart-block cart-header">
