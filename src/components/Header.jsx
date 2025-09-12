@@ -72,7 +72,11 @@ const Header = () => {
       />
 
       {/* Shopping cart */}
-      <div className="shopping-cart absolute top-3 bg-white top-20 left-3 right-3">
+      <dialog
+        closedBy="any"
+        open={isCartOpen}
+        className="shopping-cart absolute top-3 bg-white top-20"
+      >
         <div className="cart-block cart-header">
           <h3>Cart</h3>
         </div>
@@ -81,7 +85,7 @@ const Header = () => {
             <strong>Your cart is empty.</strong>
           </p>
         </div>
-      </div>
+      </dialog>
     </header>
   );
 };
