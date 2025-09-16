@@ -2,12 +2,24 @@ import React from 'react';
 
 const ProductImage = () => {
   return (
-    <div className="product-page__image">
-      <img
-        src="/images/image-product-1.jpg"
-        alt="Sneaker"
-        className="hero-image"
-      />
+    <div className="product-image">
+      <div className="image-carousel hero-image">
+        <img
+          src="/images/image-product-1.jpg"
+          alt="Sneaker"
+          className="slide"
+        />
+        <img
+          src="/images/image-product-2.jpg"
+          alt="Sneaker"
+          className="slide"
+        />
+        <img
+          src="/images/image-product-3.jpg"
+          alt="Sneaker"
+          className="slide"
+        />
+      </div>
       <nav className="flex md:hidden">
         <button className="product-page__image--prev" type="button">
           <img src="/images/icon-previous.svg" alt="Previous image" />

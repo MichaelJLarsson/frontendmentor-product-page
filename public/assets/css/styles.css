@@ -315,7 +315,7 @@ header {
  */
 
 .product-page {
-  .product-page__image {
+  .product-image {
     display: grid;
     grid-template-areas: "stack";
     place-items: center;
@@ -545,7 +545,7 @@ header {
       padding: var(--space-8) 4.3%;
     }
 
-    .product-page__image {
+    .product-image {
       width: 100%;
       margin: 0;
       left: auto;
