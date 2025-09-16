@@ -111,42 +111,22 @@ const ProductImage = () => {
         </button>
       </nav>
       <div className="thumbnails hidden md:grid">
-        <a
-          href="#"
-          className={clsx("thumbnail", activeClass(1))}
-        >
-          <img
-            src="/images/image-product-1-thumbnail.jpg"
-            alt="Product image"
-          />
-        </a>
-        <a
-          href="#"
-          className={clsx("thumbnail", activeClass(2))}
-        >
-          <img
-            src="/images/image-product-2-thumbnail.jpg"
-            alt="Product image"
-          />
-        </a>
-        <a
-          href="#"
-          className={clsx("thumbnail", activeClass(3))}
-        >
-          <img
-            src="/images/image-product-3-thumbnail.jpg"
-            alt="Product image"
-          />
-        </a>
-        <a
-          href="#"
-          className={clsx("thumbnail", activeClass(4))}
-        >
-          <img
-            src="/images/image-product-4-thumbnail.jpg"
-            alt="Product image"
-          />
-        </a>
+        {[1, 2, 3, 4].map((num) => (
+          <a
+            key={num}
+            href="#"
+            className={clsx("thumbnail", activeClass(num))}
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSlide(num);
+            }}
+          >
+            <img
+              src={`/images/image-product-${num}-thumbnail.jpg`}
+              alt={`Product image ${num}`}
+            />
+          </a>
+        ))}
       </div>
     </div>
   );
