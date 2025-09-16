@@ -1,8 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Sidebar from "@/components/Sidebar";
+import polyfill from "@oddbird/css-anchor-positioning/fn";
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const anchorRef = useRef(null);
+  const targetRef = useRef(null);
+
+  useEffect(() => {
+    if (!anchorRef.current || !targetRef.current) {
+      console.log("ANCHOR IS SUPPORTED");
+      return null;
+    }
+    console.log("ANCHOR NOT SUPPORTED, INITIALIZING");
+    polyfill();
+  }, [anchorRef, targetRef]);
 
   const handleMenuClick = (ev) => {
     ev.preventDefault();
@@ -48,7 +60,8 @@ const Header = () => {
       <button
         className="cart-button"
         type="button"
-        popovertarget="shopping-cart"
+        popoverTarget="shopping-cart"
+        ref={anchorRef}
       >
         <img
           src="/images/icon-cart.svg"
@@ -69,7 +82,8 @@ const Header = () => {
       <dialog
         popover=""
         id="shopping-cart"
-        className="shopping-cart absolute top-3 bg-white top-20"
+        ref={targetRef}
+        className="shopping-cart bg-white"
       >
         <div className="cart-block cart-header">
           <h3>Cart</h3>

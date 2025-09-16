@@ -250,6 +250,15 @@ nav ul {
   transform: translateX(-50%);
   transition: all 250ms var(--ease-out-4);
 
+  /* Anchor position to cart button */
+  position: absolute;
+  position-anchor: --cart-button;
+  inset: auto;
+  top: anchor(bottom);
+  justify-self: anchor-center;
+  margin-right: var(--space-4);
+  margin-top: var(--space-5);
+
   .cart-block {
     padding: var(--space-4);
   }
