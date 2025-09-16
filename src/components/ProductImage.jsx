@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import clsx from "clsx";
 
 const ProductImage = () => {
   const [currentSlide, setCurrentSlide] = useState(1);
@@ -21,7 +22,7 @@ const ProductImage = () => {
     if (!slidesCollection) return;
     const observer = new window.IntersectionObserver(
       (entries) => {
-        entries.forEach((entry, idx) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const slideIndex = entry.target.getAttribute("data-slide");
             setCurrentSlide(Number(slideIndex));
@@ -30,7 +31,7 @@ const ProductImage = () => {
       },
       {
         root: slideRef.current,
-        threshold: 1.0,
+        threshold: 0.5,
         rootMargin: "0px",
       }
     );
@@ -52,6 +53,9 @@ const ProductImage = () => {
       scrollToSlide(nextSlide);
     }
   };
+
+  const activeClass = (slideNum) =>
+    slideNum === currentSlide ? "active" : null;
 
   return (
     <div className="product-image">
@@ -109,7 +113,7 @@ const ProductImage = () => {
       <div className="thumbnails hidden md:grid">
         <a
           href="#"
-          className="thumbnail active"
+          className={clsx("thumbnail", activeClass(1))}
         >
           <img
             src="/images/image-product-1-thumbnail.jpg"
@@ -118,32 +122,29 @@ const ProductImage = () => {
         </a>
         <a
           href="#"
-          className="thumbnail"
+          className={clsx("thumbnail", activeClass(2))}
         >
           <img
             src="/images/image-product-2-thumbnail.jpg"
             alt="Product image"
-            className="thumbnail"
           />
         </a>
         <a
           href="#"
-          className="thumbnail"
+          className={clsx("thumbnail", activeClass(3))}
         >
           <img
             src="/images/image-product-3-thumbnail.jpg"
             alt="Product image"
-            className="thumbnail"
           />
         </a>
         <a
           href="#"
-          className="thumbnail"
+          className={clsx("thumbnail", activeClass(4))}
         >
           <img
             src="/images/image-product-4-thumbnail.jpg"
             alt="Product image"
-            className="thumbnail"
           />
         </a>
       </div>
