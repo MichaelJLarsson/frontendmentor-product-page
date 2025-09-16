@@ -347,18 +347,32 @@ header {
  * Page
  */
 
+.image-carousel {
+  display: flex;
+  grid-area: stack;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+
+  /* Carousel features */
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  .slide {
+    scroll-snap-align: start;
+    margin: 0 var(--space-5) 0;
+  }
+}
+
 .product-page {
-  .product-page__image {
+  .product-image {
     display: grid;
     grid-template-areas: "stack";
-    place-items: center;
+    align-items: center;
     gap: var(--space-5);
-
-    .hero-image {
-      grid-area: stack;
-      width: 100%;
-      height: auto;
-    }
+    overflow: hidden;
 
     nav {
       grid-area: stack;
@@ -597,7 +611,7 @@ header {
       padding: var(--space-8) 4.3%;
     }
 
-    .product-page__image {
+    .product-image {
       width: 100%;
       margin: 0;
       left: auto;
