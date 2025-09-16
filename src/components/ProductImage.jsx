@@ -3,7 +3,7 @@ import React from "react";
 const ProductImage = () => {
   return (
     <div className="product-image">
-      <div className="image-carousel hero-image">
+      <div className="image-carousel">
         <img
           src="/images/image-product-1.jpg"
           alt="Sneaker"
@@ -16,6 +16,11 @@ const ProductImage = () => {
         />
         <img
           src="/images/image-product-3.jpg"
+          alt="Sneaker"
+          className="slide"
+        />
+        <img
+          src="/images/image-product-4.jpg"
           alt="Sneaker"
           className="slide"
         />
