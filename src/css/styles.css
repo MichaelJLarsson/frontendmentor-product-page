@@ -353,7 +353,6 @@ header {
     grid-template-areas: "stack";
     align-items: center;
     gap: var(--space-5);
-    overflow: hidden;
   }
 
   .image-carousel {
@@ -368,6 +367,11 @@ header {
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+
+    /* Scroll trackbar */
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+    }
 
     .slide {
       scroll-snap-align: start;
