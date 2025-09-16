@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 const ProductInfo = () => {
+  const [quantity, setQuantity] = useState(1);
+
+  const reduceQuantity = (ev) => {
+    if (quantity > 1) setQuantity(quantity - 1);
+  };
+  const increaseQuantity = () => {
+    setQuantity(quantity + 1);
+  };
+
   return (
     <div className="product-page__info">
       <span className="eyebrow">Sneaker Company</span>
@@ -16,9 +25,9 @@ const ProductInfo = () => {
         <span className="old-price">$250.00</span>
       </div>
       <div className="quantity-picker">
-        <button>-</button>
-        <span className="value">0</span>
-        <button>+</button>
+        <button onClick={reduceQuantity}>-</button>
+        <span className="value">{quantity}</span>
+        <button onClick={increaseQuantity}>+</button>
       </div>
       <button className="product-page__add-to-cart cta primary add-to-cart-container">
         <span className="icon">
