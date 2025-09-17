@@ -353,6 +353,16 @@ header {
     grid-template-areas: "stack";
     align-items: center;
     gap: var(--space-5);
+
+    nav {
+      grid-area: stack;
+      width: 100%;
+      justify-content: space-between;
+
+      > * {
+        flex: 0 1 auto;
+      }
+    }
   }
 
   .image-carousel {
@@ -376,16 +386,6 @@ header {
     .slide {
       scroll-snap-align: start;
       margin: 0 var(--space-5) 0;
-    }
-  }
-
-  nav {
-    grid-area: stack;
-    width: 100%;
-    justify-content: space-between;
-
-    > * {
-      flex: 0 1 auto;
     }
   }
 
