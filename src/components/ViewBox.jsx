@@ -10,7 +10,7 @@ const ViewBox = ({ children }) => {
   return (
     <dialog
       popover=""
-      className="viewbox w-[500px] absolute top-[10%] left-[50%] translate-x-[-50%] bg-transparent"
+      className="viewbox p-1 w-[500px] absolute top-[10%] left-[50%] translate-x-[-50%] bg-transparent"
       ref={viewBoxRef}
     >
       <button

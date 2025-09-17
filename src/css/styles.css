@@ -634,24 +634,6 @@ header {
       padding: var(--space-8) 4.3%;
     }
 
-    .product-image {
-      width: 100%;
-      margin: 0;
-      left: auto;
-      right: auto;
-      align-content: baseline;
-
-      .image-carousel {
-        .slide {
-          border-radius: var(--roundness-3);
-        }
-      }
-
-      .carousel-navigation {
-        display: none;
-      }
-    }
-
     .product-page__info {
       padding: var(--space-7) 0 0;
       grid-template-areas:
@@ -686,6 +668,24 @@ header {
     justify-self: anchor-center;
     margin-right: var(--space-4);
     margin-top: var(--space-5);
+  }
+
+  .product-image {
+    width: 100%;
+    margin: 0;
+    left: auto;
+    right: auto;
+    align-content: baseline;
+
+    .image-carousel {
+      .slide {
+        border-radius: var(--roundness-3);
+      }
+    }
+
+    .carousel-navigation {
+      display: none;
+    }
   }
 }
 
