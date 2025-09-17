@@ -61,31 +61,31 @@ const ProductImage = () => {
     <div className="product-image">
       {/* Image carousel */}
       <div
-        className="image-carousel"
+        className="image-carousel no-focus"
         ref={slideRef}
       >
         <img
           src="/images/image-product-1.jpg"
           alt="Sneaker"
-          className="slide"
+          className="slide no-focus"
           data-slide="1"
         />
         <img
           src="/images/image-product-2.jpg"
           alt="Sneaker"
-          className="slide"
+          className="slide no-focus"
           data-slide="2"
         />
         <img
           src="/images/image-product-3.jpg"
           alt="Sneaker"
-          className="slide"
+          className="slide no-focus"
           data-slide="3"
         />
         <img
           src="/images/image-product-4.jpg"
           alt="Sneaker"
-          className="slide"
+          className="slide no-focus"
           data-slide="4"
         />
       </div>
@@ -93,7 +93,7 @@ const ProductImage = () => {
       {/* Navigation buttons */}
       <nav className="carousel-navigation flex">
         <button
-          className="product-page__image--prev"
+          className="nav-prev"
           type="button"
           onClick={slideLeft}
         >
@@ -103,7 +103,7 @@ const ProductImage = () => {
           />
         </button>
         <button
-          className="product-page__image--next"
+          className="nav-next"
           type="button"
           onClick={slideRight}
         >

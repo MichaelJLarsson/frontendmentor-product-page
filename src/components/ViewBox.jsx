@@ -14,9 +14,11 @@ const ViewBox = ({ children }) => {
       ref={viewBoxRef}
     >
       <button
-        className="close-button"
+        className="close-button hidden"
         aria-label="Close viewbox"
-      />
+      >
+        X
+      </button>
       {children}
     </dialog>
   );
