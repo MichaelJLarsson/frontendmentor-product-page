@@ -3,8 +3,13 @@ import { useEffect, useRef } from "react";
 const ViewBox = ({ children }) => {
   const viewBoxRef = useRef(null);
 
+  const lightDismiss = ({ target: dialog }) => {
+    if (dialog.nodeName === "DIALOG") dialog.close("dismiss");
+  };
+
   useEffect(() => {
-    viewBoxRef.current.showModal();
+    // Close viewbox when clicking outside
+    viewBoxRef.current.addEventListener("click", lightDismiss);
   }, []);
 
   return (
