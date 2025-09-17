@@ -91,7 +91,7 @@ const ProductImage = () => {
       </div>
 
       {/* Navigation buttons */}
-      <nav className="flex md:hidden">
+      <nav className="carousel-navigation flex">
         <button
           className="product-page__image--prev"
           type="button"

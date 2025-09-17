@@ -265,6 +265,16 @@ nav ul {
   }
 }
 
+.viewbox {
+  .carousel-navigation {
+    display: flex;
+  }
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+
 /**
  * Layout
  */
@@ -626,6 +636,10 @@ header {
         .slide {
           border-radius: var(--roundness-3);
         }
+      }
+
+      .carousel-navigation {
+        display: none;
       }
     }
 
