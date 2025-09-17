@@ -64,32 +64,16 @@ const ProductImage = () => {
         className="image-carousel no-focus"
         ref={slideRef}
       >
-        <img
-          src="/images/image-product-1.jpg"
-          alt="Sneaker"
-          className="slide no-focus"
-          data-slide="1"
-        />
-        <img
-          src="/images/image-product-2.jpg"
-          alt="Sneaker"
-          className="slide no-focus"
-          data-slide="2"
-        />
-        <img
-          src="/images/image-product-3.jpg"
-          alt="Sneaker"
-          className="slide no-focus"
-          data-slide="3"
-        />
-        <img
-          src="/images/image-product-4.jpg"
-          alt="Sneaker"
-          className="slide no-focus"
-          data-slide="4"
-        />
+        {[1, 2, 3, 4].map((num) => (
+          <img
+            key={num}
+            src={`/images/image-product-${num}.jpg`}
+            alt="Sneaker"
+            className="slide no-focus"
+            data-slide={num}
+          />
+        ))}
       </div>
-
       {/* Navigation buttons */}
       <nav className="carousel-navigation flex">
         <button
@@ -113,7 +97,6 @@ const ProductImage = () => {
           />
         </button>
       </nav>
-
       {/* Thumbnails */}
       <div className="thumbnails hidden md:grid">
         {[1, 2, 3, 4].map((num) => (
