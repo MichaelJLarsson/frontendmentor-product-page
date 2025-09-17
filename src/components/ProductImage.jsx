@@ -59,6 +59,7 @@ const ProductImage = () => {
 
   return (
     <div className="product-image">
+      {/* Image carousel */}
       <div
         className="image-carousel"
         ref={slideRef}
@@ -88,6 +89,8 @@ const ProductImage = () => {
           data-slide="4"
         />
       </div>
+
+      {/* Navigation buttons */}
       <nav className="flex md:hidden">
         <button
           className="product-page__image--prev"
@@ -110,6 +113,8 @@ const ProductImage = () => {
           />
         </button>
       </nav>
+
+      {/* Thumbnails */}
       <div className="thumbnails hidden md:grid">
         {[1, 2, 3, 4].map((num) => (
           <a
