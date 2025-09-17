@@ -368,6 +368,22 @@ nav ul {
 }
 
 .viewbox {
+  .close-button {
+    width: 20px;
+    padding: var(--space-3);
+    margin: calc(-1 * var(--space-3));
+    box-sizing: content-box;
+
+    svg {
+      width: 100%;
+      height: 100%;
+
+      path {
+        fill: var(--white);
+      }
+    }
+  }
+
   .carousel-navigation {
     display: flex;
   }

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import CloseIcon from "../images/icon-close.svg?react";
 
 const ViewBox = ({ children }) => {
   const viewBoxRef = useRef(null);
@@ -8,6 +9,7 @@ const ViewBox = ({ children }) => {
   };
 
   useEffect(() => {
+    viewBoxRef.current.showModal();
     // Close viewbox when clicking outside
     viewBoxRef.current.addEventListener("click", lightDismiss);
   }, []);
@@ -18,12 +20,14 @@ const ViewBox = ({ children }) => {
       className="viewbox p-1 w-[500px] absolute top-[10%] left-[50%] translate-x-[-50%] bg-transparent"
       ref={viewBoxRef}
     >
-      <button
-        className="close-button hidden"
-        aria-label="Close viewbox"
-      >
-        X
-      </button>
+      <div className="dialog-header flex justify-end mb-6">
+        <button
+          className="close-button"
+          aria-label="Close viewbox"
+        >
+          <CloseIcon />
+        </button>
+      </div>
       {children}
     </dialog>
   );
