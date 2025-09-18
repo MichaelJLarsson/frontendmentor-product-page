@@ -57,6 +57,10 @@ const ProductImage = () => {
   const activeClass = (slideNum) =>
     slideNum === currentSlide ? "active" : null;
 
+  const handleImageClick = (num) => {
+    console.log("CLICKED IMAGE: ", num);
+  };
+
   return (
     <div className="product-image">
       {/* Image carousel */}
@@ -65,13 +69,20 @@ const ProductImage = () => {
         ref={slideRef}
       >
         {[1, 2, 3, 4].map((num) => (
-          <img
+          <button
+            type="button"
+            aria-label="Enlarge picture"
+            onClick={() => handleImageClick(num)}
             key={num}
-            src={`/images/image-product-${num}.jpg`}
-            alt="Sneaker"
-            className="slide no-focus"
-            data-slide={num}
-          />
+            className="shrink-0 basis-[100%] slide"
+          >
+            <img
+              src={`/images/image-product-${num}.jpg`}
+              alt="Sneaker"
+              className="slide no-focus"
+              data-slide={num}
+            />
+          </button>
         ))}
       </div>
       {/* Navigation buttons */}
