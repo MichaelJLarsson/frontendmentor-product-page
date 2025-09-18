@@ -48,7 +48,7 @@ const Header = () => {
       <button
         className="cart-button"
         type="button"
-        popovertarget="shopping-cart"
+        popoverTarget="shopping-cart"
       >
         <img
           src="/images/icon-cart.svg"
