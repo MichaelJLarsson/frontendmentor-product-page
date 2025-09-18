@@ -14,6 +14,10 @@ const ViewBox = ({ children }) => {
     viewBoxRef.current.addEventListener("click", lightDismiss);
   }, []);
 
+  const handleCloseClick = () => {
+    viewBoxRef.current.close("dismiss");
+  };
+
   return (
     <dialog
       popover=""
@@ -24,6 +28,7 @@ const ViewBox = ({ children }) => {
         <button
           className="close-button"
           aria-label="Close viewbox"
+          onClick={handleCloseClick}
         >
           <CloseIcon />
         </button>
