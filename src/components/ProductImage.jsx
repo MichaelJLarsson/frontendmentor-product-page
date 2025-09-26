@@ -58,7 +58,7 @@ const ProductImage = ({ openViewBox, isOpen }) => {
     slideNum === currentSlide ? "active" : null;
 
   const handleImageClick = () => {
-    if (isOpen === false) openViewBox();
+    if (window.innerWidth > 768 && isOpen === false) openViewBox();
   };
 
   return (
@@ -72,7 +72,7 @@ const ProductImage = ({ openViewBox, isOpen }) => {
           <button
             type="button"
             aria-label="Enlarge picture"
-            onClick={() => handleImageClick()}
+            onClick={handleImageClick}
             key={num}
             className="shrink-0 basis-[100%] slide"
           >
