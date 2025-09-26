@@ -1,20 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./components/Header";
 import ProductImage from "./components/ProductImage";
 import ProductInfo from "./components/ProductInfo";
 import ViewBox from "./components/ViewBox";
 
 function App() {
+  const [isViewBoxOpen, setIsViewBoxOpen] = useState(false);
+
   return (
     <div className="product-page">
       <div className="page">
         <Header />
         <main className="content">
-          <ProductImage />
+          <ProductImage
+            openViewBox={() => {
+              setIsViewBoxOpen(true);
+            }}
+          />
           <ProductInfo />
         </main>
       </div>
-      <ViewBox>
+      <ViewBox
+        isOpen={isViewBoxOpen}
+        close={() => {
+          setIsViewBoxOpen(false);
+        }}
+      >
         <ProductImage />
       </ViewBox>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import clsx from "clsx";
 
-const ProductImage = () => {
+const ProductImage = ({ openViewBox }) => {
   const [currentSlide, setCurrentSlide] = useState(1);
   const slideRef = useRef(null);
 
@@ -58,7 +58,7 @@ const ProductImage = () => {
     slideNum === currentSlide ? "active" : null;
 
   const handleImageClick = (num) => {
-    console.log("CLICKED IMAGE: ", num);
+    openViewBox();
   };
 
   return (
