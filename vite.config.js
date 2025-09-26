@@ -9,13 +9,13 @@ export default defineConfig({
   plugins: [svgr(), react(), tailwindcss()],
   server: {
     port: 3000,
-    open: "/index-react.html",
+    open: "/",
   },
   build: {
     outDir: "dist",
     rollupOptions: {
       input: {
-        main: "./index-react.html",
+        main: "./index.html",
       },
     },
   },
