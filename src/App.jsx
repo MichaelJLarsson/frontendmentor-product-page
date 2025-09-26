@@ -16,6 +16,7 @@ function App() {
             openViewBox={() => {
               setIsViewBoxOpen(true);
             }}
+            isOpen={isViewBoxOpen}
           />
           <ProductInfo />
         </main>

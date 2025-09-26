@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import clsx from "clsx";
 
-const ProductImage = ({ openViewBox }) => {
+const ProductImage = ({ openViewBox, isOpen }) => {
   const [currentSlide, setCurrentSlide] = useState(1);
   const slideRef = useRef(null);
 
@@ -57,8 +57,8 @@ const ProductImage = ({ openViewBox }) => {
   const activeClass = (slideNum) =>
     slideNum === currentSlide ? "active" : null;
 
-  const handleImageClick = (num) => {
-    openViewBox();
+  const handleImageClick = () => {
+    if (isOpen === false) openViewBox();
   };
 
   return (
@@ -72,7 +72,7 @@ const ProductImage = ({ openViewBox }) => {
           <button
             type="button"
             aria-label="Enlarge picture"
-            onClick={() => handleImageClick(num)}
+            onClick={() => handleImageClick()}
             key={num}
             className="shrink-0 basis-[100%] slide"
           >
