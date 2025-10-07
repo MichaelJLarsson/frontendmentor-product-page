@@ -11,12 +11,15 @@ const Header = () => {
 
   return (
     <header>
+      {/* Hamburger navigation */}
       <button
         className="hamburger-menu md:hidden"
         type="button"
         aria-label="Menu"
         onClick={(ev) => handleMenuClick(ev)}
       />
+
+      {/* Logo */}
       <a
         href="#"
         className="logo"
@@ -26,6 +29,8 @@ const Header = () => {
           alt="Sneaker Company logo"
         />
       </a>
+
+      {/* Main navigation */}
       <nav className="main-navigation hidden md:grid">
         <ul>
           <li>
@@ -45,6 +50,8 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+
+      {/* Cart button */}
       <button
         className="cart-button"
         type="button"
@@ -56,6 +63,8 @@ const Header = () => {
         />
         <span className="cart-items">3</span>
       </button>
+
+      {/* User avatat */}
       <button
         type="button"
         className="user-avatar"
