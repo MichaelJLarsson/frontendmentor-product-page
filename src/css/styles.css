@@ -682,15 +682,21 @@ header {
     width: 500px;
     left: unset;
     transform: unset;
-
-    /* Anchor position to cart button */
     position: absolute;
-    position-anchor: --cart-button;
-    inset: auto;
-    top: anchor(bottom);
-    justify-self: anchor-center;
-    margin-right: var(--space-4);
-    margin-top: var(--space-5);
+
+    @supports (position-anchor: --cart-button) {
+      position-anchor: --cart-button;
+      inset: auto;
+      top: anchor(bottom);
+      justify-self: anchor-center;
+      margin-right: var(--space-4);
+      margin-top: var(--space-5);
+    }
+
+    @supports not (position-anchor: --cart-button) {
+      right: 0px;
+      margin-right: var(--space-5);
+    }
   }
 
   .product-image {
@@ -714,9 +720,11 @@ header {
 
 /* Hard coding values since we can't use custom props in media quesries */
 @media screen and (min-width: calc(1115px + (500px / 2))) {
-  .shopping-cart {
-    /* Removes the right margin when there's enough space in the viewport */
-    margin-right: 0;
+  @supports (position-anchor: --cart-button) {
+    .shopping-cart {
+      /* Removes the right margin when there's enough space in the viewport */
+      margin-right: 0;
+    }
   }
 }
 
@@ -729,6 +737,15 @@ header {
         "body-text body-text"
         "price-container price-container"
         "quantity-picker add-to-cart-container";
+    }
+  }
+}
+
+@media screen and (min-width: 1580px) {
+  @supports not (position-anchor: --cart-button) {
+    .shopping-cart {
+      left: 50%;
+      transform: translateX(33%);
     }
   }
 }
