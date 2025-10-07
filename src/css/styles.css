@@ -262,9 +262,13 @@ nav ul {
   }
 
   .cart-body {
-    p {
-      color: var(--gray-6);
-    }
+    font-size: var(--font-size-base);
+    color: var(--gray-6);
+  }
+
+  .total {
+    font-weight: 700;
+    color: var(--black);
   }
 }
 

@@ -84,10 +84,36 @@ const Header = () => {
         <div className="cart-block cart-header">
           <h3>Cart</h3>
         </div>
-        <div className="cart-block cart-body flex justify-center items-center min-h-[200px]">
+
+        {/* Empty cart */}
+        <div className="cart-block cart-body flex justify-center items-center min-h-[200px] hidden">
           <p>
             <strong>Your cart is empty.</strong>
           </p>
+        </div>
+
+        {/* Filled cart */}
+        <div className="cart-block cart-body gap-4 grid grid-cols-[max-content_1fr_max-content]">
+          <img
+            src="/images/image-product-1-thumbnail.jpg"
+            alt="Product image thumbnail"
+            className="product-thumbnail w-14 rounded-xs"
+          />
+          <div className="gap-x-2 grid grid-cols-[max-content_max-content_1fr] place-content-center product-info">
+            <span className="col-span-3 product-name">
+              Fall Limited Edition Sneakers
+            </span>
+            <span className="price">$125.00 </span>
+            <span className="quantity">x 3</span>
+            <span className="total"> $375.00</span>
+          </div>
+          <button className="icon-button remove">
+            <img
+              src="/images/icon-delete.svg"
+              alt="Trashcan icon"
+            />
+          </button>
+          <button className="cta primary col-span-3">Checkout</button>
         </div>
       </dialog>
     </header>
