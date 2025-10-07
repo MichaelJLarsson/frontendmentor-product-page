@@ -472,6 +472,27 @@ header {
     anchor-name: --cart-button;
     width: 20px;
     justify-self: end;
+    position: relative;
+
+    .cart-items {
+      --circle-size: 1.5em;
+      --num-size: 10px;
+
+      /* Position & Size */
+      display: inline-block;
+      position: absolute;
+      width: var(--circle-size);
+      height: var(--circle-size);
+      top: calc(var(--circle-size) * -1);
+      right: calc(var(--circle-size) * -1);
+      transform: translate(-10px, 10px);
+
+      /* Decoration */
+      background-color: var(--brand-yellow);
+      border-radius: 50%;
+      color: var(--white);
+      font-size: var(--num-size);
+    }
   }
 
   .user-avatar {

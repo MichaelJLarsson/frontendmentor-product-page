@@ -54,6 +54,7 @@ const Header = () => {
           src="/images/icon-cart.svg"
           alt="Shopping cart icon"
         />
+        <span className="cart-items">3</span>
       </button>
       <button
         type="button"
