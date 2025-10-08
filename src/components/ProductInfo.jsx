@@ -58,6 +58,7 @@ const ProductInfo = () => {
       <button
         className="product-page__add-to-cart cta primary add-to-cart-container"
         onClick={onAtcClick}
+        popoverTarget="shopping-cart"
       >
         <span className="icon">
           <svg
