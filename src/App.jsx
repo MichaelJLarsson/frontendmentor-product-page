@@ -8,11 +8,11 @@ export const ShoppingCartContext = createContext([[], function () {}]);
 
 function App() {
   const [isViewBoxOpen, setIsViewBoxOpen] = useState(false);
-  const cartItems = useState([]);
+  const cartHook = useState([]);
 
   return (
     <div className="product-page">
-      <ShoppingCartContext value={cartItems}>
+      <ShoppingCartContext value={cartHook}>
         <div className="page">
           <Header />
           <main className="content">

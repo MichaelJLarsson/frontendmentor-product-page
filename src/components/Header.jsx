@@ -12,6 +12,11 @@ const Header = () => {
 
   const [cart] = useContext(ShoppingCartContext);
 
+  const itemsSummarized = cart.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <header>
       {/* Hamburger navigation */}
@@ -64,7 +69,7 @@ const Header = () => {
           src="/images/icon-cart.svg"
           alt="Shopping cart icon"
         />
-        <span className="cart-items">{cart.length}</span>
+        <span className="cart-items">{itemsSummarized}</span>
       </button>
 
       {/* User avatat */}
@@ -105,9 +110,11 @@ const Header = () => {
               <span className="col-span-3 product-name">
                 Fall Limited Edition Sneakers
               </span>
-              <span className="price">$125.00 </span>
-              <span className="quantity">x 3</span>
-              <span className="total"> $375.00</span>
+              <span className="price">{`$${cart[0].price}.00`}</span>
+              <span className="quantity">x {itemsSummarized}</span>
+              <span className="total">
+                {`$${cart[0].price * cart[0].quantity}.00`}
+              </span>
             </div>
             <button className="icon-button remove">
               <img

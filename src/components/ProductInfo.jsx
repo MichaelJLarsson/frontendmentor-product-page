@@ -1,13 +1,39 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { ShoppingCartContext } from "../App";
 
 const ProductInfo = () => {
   const [quantity, setQuantity] = useState(1);
+  const [cart, setCart] = useContext(ShoppingCartContext);
 
   const reduceQuantity = (ev) => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
+
   const increaseQuantity = () => {
     setQuantity(quantity + 1);
+  };
+
+  const updateCart = (item) => {
+    const existingIndex = cart.findIndex(
+      (cartItem) => cartItem.name === item.name
+    );
+    if (existingIndex !== -1) {
+      const updatedCart = [...cart];
+      updatedCart[existingIndex].quantity += item.quantity;
+      setCart(updatedCart);
+    } else {
+      setCart([...cart, item]);
+    }
+  };
+
+  const onAtcClick = () => {
+    updateCart({
+      name: "Fall Limited Edition Sneakers",
+      quantity,
+      price: 125,
+    });
+    setQuantity(1); // Reset quantity back to one
+    // showShoppingCart();
   };
 
   return (
@@ -29,7 +55,10 @@ const ProductInfo = () => {
         <span className="value">{quantity}</span>
         <button onClick={increaseQuantity}>+</button>
       </div>
-      <button className="product-page__add-to-cart cta primary add-to-cart-container">
+      <button
+        className="product-page__add-to-cart cta primary add-to-cart-container"
+        onClick={onAtcClick}
+      >
         <span className="icon">
           <svg
             width="22"
