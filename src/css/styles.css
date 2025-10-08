@@ -507,9 +507,29 @@ header {
   }
 
   .main-navigation {
+    height: 100%;
+
+    ul {
+      height: 100%;
+
+      li {
+        height: 100%;
+      }
+    }
+
     a {
       font-size: var(--font-size-sm);
       color: var(--light-grey);
+      transition: all 200ms var(--easing-in-out-assymetric);
+      align-content: center;
+      display: block;
+      height: 100%;
+
+      &:hover {
+        color: var(--black);
+        transition: all 200ms var(--easing-in-out-assymetric);
+        border-bottom: 4px solid var(--brand-yellow);
+      }
     }
   }
 }
