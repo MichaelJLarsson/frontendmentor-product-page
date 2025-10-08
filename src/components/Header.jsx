@@ -4,13 +4,16 @@ import { ShoppingCartContext } from "../App";
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [cart, setCart] = useContext(ShoppingCartContext);
 
   const handleMenuClick = (ev) => {
     ev.preventDefault();
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const [cart] = useContext(ShoppingCartContext);
+  const handleDeleteItem = (index) => {
+    setCart(cart.toSpliced(index, 1));
+  };
 
   const itemsSummarized = cart.reduce(
     (total, item) => total + item.quantity,
@@ -116,7 +119,10 @@ const Header = () => {
                 {`$${cart[0].price * cart[0].quantity}.00`}
               </span>
             </div>
-            <button className="icon-button remove">
+            <button
+              className="icon-button remove"
+              onClick={() => handleDeleteItem(0)}
+            >
               <img
                 src="/images/icon-delete.svg"
                 alt="Trashcan icon"
