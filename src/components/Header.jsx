@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Sidebar from "@/components/Sidebar";
+import { ShoppingCartContext } from "../App";
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -8,6 +9,8 @@ const Header = () => {
     ev.preventDefault();
     setIsSidebarOpen(!isSidebarOpen);
   };
+
+  const [cart] = useContext(ShoppingCartContext);
 
   return (
     <header>
@@ -61,7 +64,7 @@ const Header = () => {
           src="/images/icon-cart.svg"
           alt="Shopping cart icon"
         />
-        <span className="cart-items">3</span>
+        <span className="cart-items">{cart.length}</span>
       </button>
 
       {/* User avatat */}
@@ -85,36 +88,36 @@ const Header = () => {
           <h3>Cart</h3>
         </div>
 
-        {/* Empty cart */}
-        <div className="cart-block cart-body flex justify-center items-center min-h-[200px] hidden">
-          <p>
-            <strong>Your cart is empty.</strong>
-          </p>
-        </div>
-
-        {/* Filled cart */}
-        <div className="cart-block cart-body gap-4 grid grid-cols-[max-content_1fr_max-content]">
-          <img
-            src="/images/image-product-1-thumbnail.jpg"
-            alt="Product image thumbnail"
-            className="product-thumbnail w-14 rounded-xs"
-          />
-          <div className="gap-x-2 grid grid-cols-[max-content_max-content_1fr] place-content-center product-info">
-            <span className="col-span-3 product-name">
-              Fall Limited Edition Sneakers
-            </span>
-            <span className="price">$125.00 </span>
-            <span className="quantity">x 3</span>
-            <span className="total"> $375.00</span>
+        {cart.length === 0 ? (
+          <div className="cart-block cart-body flex justify-center items-center min-h-[200px]">
+            <p>
+              <strong>Your cart is empty.</strong>
+            </p>
           </div>
-          <button className="icon-button remove">
+        ) : (
+          <div className="cart-block cart-body gap-4 grid grid-cols-[max-content_1fr_max-content]">
             <img
-              src="/images/icon-delete.svg"
-              alt="Trashcan icon"
+              src="/images/image-product-1-thumbnail.jpg"
+              alt="Product image thumbnail"
+              className="product-thumbnail w-14 rounded-xs"
             />
-          </button>
-          <button className="cta primary col-span-3">Checkout</button>
-        </div>
+            <div className="gap-x-2 grid grid-cols-[max-content_max-content_1fr] place-content-center product-info">
+              <span className="col-span-3 product-name">
+                Fall Limited Edition Sneakers
+              </span>
+              <span className="price">$125.00 </span>
+              <span className="quantity">x 3</span>
+              <span className="total"> $375.00</span>
+            </div>
+            <button className="icon-button remove">
+              <img
+                src="/images/icon-delete.svg"
+                alt="Trashcan icon"
+              />
+            </button>
+            <button className="cta primary col-span-3">Checkout</button>
+          </div>
+        )}
       </dialog>
     </header>
   );
