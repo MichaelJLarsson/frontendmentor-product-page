@@ -75,12 +75,12 @@ const ProductImage = ({ openViewBox, isOpen }) => {
             onClick={handleImageClick}
             key={num}
             className="shrink-0 basis-[100%] slide"
+            data-slide={num}
           >
             <img
               src={`/images/image-product-${num}.jpg`}
               alt="Sneaker"
               className="slide no-focus"
-              data-slide={num}
             />
           </button>
         ))}
