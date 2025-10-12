@@ -72,7 +72,9 @@ const Header = () => {
           src="/images/icon-cart.svg"
           alt="Shopping cart icon"
         />
-        <span className="cart-items">{itemsSummarized}</span>
+        {itemsSummarized > 0 && (
+          <span className="cart-items">{itemsSummarized}</span>
+        )}
       </button>
 
       {/* User avatat */}
