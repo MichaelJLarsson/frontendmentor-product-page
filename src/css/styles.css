@@ -200,7 +200,7 @@ nav ul {
   top: 0;
   bottom: 0;
   background-color: var(--black);
-  z-index: 10;
+  z-index: 999;
   animation: fade-in 400ms var(--easing-in-out-assymetric);
   opacity: 0.75;
 
@@ -219,7 +219,7 @@ nav ul {
   bottom: 0;
   width: var(--panel-width);
   background-color: var(--white);
-  z-index: 20;
+  z-index: 9999;
   padding: var(--space-4);
   transition-property: transform;
   transition-duration: 350ms;
