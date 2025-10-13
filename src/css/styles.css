@@ -499,6 +499,11 @@ header {
     width: 20px;
     justify-self: end;
     position: relative;
+    transition: transform 100ms ease-out;
+
+    &:hover {
+      transform: scale(110%);
+    }
 
     .cart-items {
       --circle-size: 1.5em;
