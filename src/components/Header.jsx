@@ -92,7 +92,7 @@ const Header = () => {
       <dialog
         popover=""
         id="shopping-cart"
-        className="shopping-cart absolute top-3 bg-white top-20"
+        className="shopping-cart"
       >
         <div className="cart-block cart-header">
           <h3>Cart</h3>
