@@ -40,7 +40,7 @@ const ViewBox = ({ children, isOpen, close }) => {
   return (
     <dialog
       popover=""
-      className="viewbox center-center invisible md:visible p-5 w-[640px] bg-transparent"
+      className="viewbox invisible md:visible p-5 w-[640px] bg-transparent"
       ref={viewBoxRef}
     >
       <div className="dialog-header flex justify-end mb-6">

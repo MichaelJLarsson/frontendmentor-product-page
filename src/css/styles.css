@@ -166,6 +166,10 @@ nav ul {
   }
 }
 
+[popover] {
+  margin: auto;
+}
+
 /**
  * Components
  */
@@ -454,13 +458,6 @@ nav ul {
     border: none;
     box-shadow: none;
   }
-}
-
-.center-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
 }
 
 /**
