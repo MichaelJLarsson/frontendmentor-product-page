@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Play, Pause, RotateCcw, Plus, Minus } from "lucide-react";
 
+// Constants
+const MAX_TIME_SECONDS = 300; // 5 minutes
+const MIN_TIME_SECONDS = 1;
+const MAX_INTERVALS = 20;
+const MIN_INTERVALS = 1;
+
 function IntervalTimer() {
   // Timer settings
   const [warmupTime, setWarmupTime] = useState(10);
@@ -44,6 +50,12 @@ function IntervalTimer() {
 
   // Timer logic
   useEffect(() => {
+    // Clear any existing interval first
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+
     if (isRunning && timeLeft > 0) {
       intervalRef.current = setInterval(() => {
         setTimeLeft((prev) => prev - 1);
@@ -83,7 +95,7 @@ function IntervalTimer() {
   };
 
   // Adjust setting with min/max bounds
-  const adjustSetting = (setter, value, delta, min = 1, max = 300) => {
+  const adjustSetting = (setter, value, delta, min = MIN_TIME_SECONDS, max = MAX_TIME_SECONDS) => {
     if (!isRunning && currentPhase === "idle") {
       const newValue = Math.max(min, Math.min(max, value + delta));
       setter(newValue);
@@ -251,7 +263,7 @@ function IntervalTimer() {
               <span className="text-white font-medium">Intervals</span>
               <div className="flex items-center gap-3">
                 <button
-                  onClick={() => adjustSetting(setIntervals, intervals, -1, 1, 20)}
+                  onClick={() => adjustSetting(setIntervals, intervals, -1, MIN_INTERVALS, MAX_INTERVALS)}
                   className="bg-white/20 hover:bg-white/30 text-white rounded-lg p-2 transition-all"
                   aria-label="Decrease intervals"
                 >
@@ -259,7 +271,7 @@ function IntervalTimer() {
                 </button>
                 <span className="text-white text-xl font-mono w-20 text-center">{intervals}</span>
                 <button
-                  onClick={() => adjustSetting(setIntervals, intervals, 1, 1, 20)}
+                  onClick={() => adjustSetting(setIntervals, intervals, 1, MIN_INTERVALS, MAX_INTERVALS)}
                   className="bg-white/20 hover:bg-white/30 text-white rounded-lg p-2 transition-all"
                   aria-label="Increase intervals"
                 >
