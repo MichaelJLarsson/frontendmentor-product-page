@@ -69,13 +69,13 @@
     opacity: 0;
   }
   to {
-    opacity: 1;
+    opacity: 0.75;
   }
 }
 
 @keyframes fade-out {
   from {
-    opacity: 1;
+    opacity: 0.75;
   }
   to {
     opacity: 0;
@@ -231,12 +231,17 @@ nav ul {
   bottom: 0;
   background-color: var(--black);
   z-index: 999;
-  animation: fade-in 400ms var(--easing-in-out-assymetric);
-  opacity: 0.75;
 
-  &.closing {
+  &.open {
+    opacity: 0.75;
+    transition: opacity 650ms var(--easing-in-out-assymetric);
+  }
+
+  &.closed {
+    visibility: hidden;
     opacity: 0;
-    animation: fade-out 300ms var(--easing-in-out-assymetric);
+    transition: opacity 350ms var(--easing-in-out-assymetric),
+      visibility 0s linear 350ms;
   }
 }
 

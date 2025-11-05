@@ -33,7 +33,7 @@ const Sidebar = ({ open, handleClose }) => {
         </nav>
       </div>
       <div
-        className={clsx("tint", !open ? "hidden" : "")}
+        className={clsx("tint", !open ? "closed" : "open")}
         onClick={(ev) => handleClose(ev)}
       />
     </>
