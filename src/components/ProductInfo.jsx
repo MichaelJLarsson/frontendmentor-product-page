@@ -1,9 +1,26 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ShoppingCartContext } from "../App";
 
 const ProductInfo = () => {
   const [quantity, setQuantity] = useState(1);
   const [cart, setCart] = useContext(ShoppingCartContext);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [isInitialLoad, setIsInitialLoad] = useState(true);
+
+  // Trigger pop animation when quantity changes
+  useEffect(() => {
+    if (isInitialLoad) {
+      setIsInitialLoad(false);
+      return;
+    }
+
+    setIsAnimating(true);
+    const timer = setTimeout(() => {
+      setIsAnimating(false);
+    }, 300); // Match animation duration
+
+    return () => clearTimeout(timer);
+  }, [quantity]);
 
   const reduceQuantity = (ev) => {
     if (quantity > 1) setQuantity(quantity - 1);
@@ -52,7 +69,7 @@ const ProductInfo = () => {
       </div>
       <div className="quantity-picker">
         <button onClick={reduceQuantity}>-</button>
-        <span className="value">{quantity}</span>
+        <span className={`value ${isAnimating ? "pop" : ""}`}>{quantity}</span>
         <button onClick={increaseQuantity}>+</button>
       </div>
       <button
