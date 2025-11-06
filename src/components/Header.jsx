@@ -28,7 +28,14 @@ const Header = () => {
         type="button"
         aria-label="Menu"
         onClick={(ev) => handleMenuClick(ev)}
-      />
+      >
+        <img
+          src="images/icon-menu.svg"
+          alt="Menu"
+          width="16"
+          height="16"
+        />
+      </button>
 
       {/* Logo */}
       <a
@@ -77,12 +84,19 @@ const Header = () => {
         )}
       </button>
 
-      {/* User avatat */}
+      {/* User avatar */}
       <button
         type="button"
         className="user-avatar"
         aria-label="User avatar"
-      />
+      >
+        <img
+          src="images/image-avatar.png"
+          alt="User avatar"
+          width="24"
+          height="24"
+        />
+      </button>
 
       {/* Mobile menu */}
       <Sidebar

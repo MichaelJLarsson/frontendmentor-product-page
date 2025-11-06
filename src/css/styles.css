@@ -531,8 +531,12 @@ header {
   .hamburger-menu {
     width: 16px;
     height: 16px;
-    background-image: url(../images/icon-menu.svg);
     background-repeat: no-repeat;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   .logo {
@@ -583,10 +587,17 @@ header {
   .user-avatar {
     width: 24px;
     height: 24px;
-    background-image: url(../images/image-avatar.png);
     background-size: contain;
     border-radius: 50%;
     transition: all 100ms ease-out;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
 
     &:hover {
       outline: 2px solid var(--brand-yellow);
