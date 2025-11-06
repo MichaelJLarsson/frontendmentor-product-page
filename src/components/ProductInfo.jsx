@@ -58,9 +58,9 @@ const ProductInfo = () => {
       <span className="eyebrow">Sneaker Company</span>
       <h1 className="heading-1">Fall Limited Edition Sneakers</h1>
       <p className="body-text">
-        These low-profile sneakers are your perfect casual wear companion.
+        {`These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they'll withstand everything the
-        weather can offer.
+        weather can offer.`}
       </p>
       <div className="price-container">
         <span className="current-price">$125.00</span>
