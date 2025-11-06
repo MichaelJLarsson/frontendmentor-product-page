@@ -30,6 +30,7 @@ const Sidebar = ({ open, handleClose }) => {
     <>
       <div className={clsx("sidepanel sm:block", open ? "open" : "")}>
         <button
+          type="button"
           className="close"
           aria-label="Close panel"
           onClick={(ev) => handleClose(ev)}
