@@ -36,7 +36,7 @@ const Header = () => {
         className="logo"
       >
         <img
-          src="/images/logo.svg"
+          src="images/logo.svg"
           alt="Sneaker Company logo"
         />
       </a>
@@ -69,7 +69,7 @@ const Header = () => {
         popoverTarget="shopping-cart"
       >
         <img
-          src="/images/icon-cart.svg"
+          src="images/icon-cart.svg"
           alt="Shopping cart icon"
         />
         {itemsSummarized > 0 && (
@@ -109,7 +109,7 @@ const Header = () => {
         ) : (
           <div className="cart-block cart-body gap-4 grid grid-cols-[max-content_1fr_max-content]">
             <img
-              src="/images/image-product-1-thumbnail.jpg"
+              src="images/image-product-1-thumbnail.jpg"
               alt="Product image thumbnail"
               className="product-thumbnail w-14 rounded-xs"
             />
@@ -128,7 +128,7 @@ const Header = () => {
               onClick={() => handleDeleteItem(0)}
             >
               <img
-                src="/images/icon-delete.svg"
+                src="images/icon-delete.svg"
                 alt="Trashcan icon"
               />
             </button>

@@ -78,7 +78,7 @@ const ProductImage = ({ openViewBox, isOpen }) => {
             data-slide={num}
           >
             <img
-              src={`/images/image-product-${num}.jpg`}
+              src={`images/image-product-${num}.jpg`}
               alt="Sneaker"
               className="slide no-focus"
             />
@@ -93,7 +93,7 @@ const ProductImage = ({ openViewBox, isOpen }) => {
           onClick={slideLeft}
         >
           <img
-            src="/images/icon-previous.svg"
+            src="images/icon-previous.svg"
             alt="Previous image"
           />
         </button>
@@ -103,7 +103,7 @@ const ProductImage = ({ openViewBox, isOpen }) => {
           onClick={slideRight}
         >
           <img
-            src="/images/icon-next.svg"
+            src="images/icon-next.svg"
             alt="Next image"
           />
         </button>
@@ -121,7 +121,7 @@ const ProductImage = ({ openViewBox, isOpen }) => {
             }}
           >
             <img
-              src={`/images/image-product-${num}-thumbnail.jpg`}
+              src={`images/image-product-${num}-thumbnail.jpg`}
               alt={`Product image ${num}`}
             />
           </a>
