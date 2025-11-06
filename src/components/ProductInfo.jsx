@@ -68,9 +68,19 @@ const ProductInfo = () => {
         <span className="old-price">$250.00</span>
       </div>
       <div className="quantity-picker">
-        <button onClick={reduceQuantity}>-</button>
+        <button
+          type="button"
+          onClick={reduceQuantity}
+        >
+          -
+        </button>
         <span className={`value ${isAnimating ? "pop" : ""}`}>{quantity}</span>
-        <button onClick={increaseQuantity}>+</button>
+        <button
+          type="button"
+          onClick={increaseQuantity}
+        >
+          +
+        </button>
       </div>
       <button
         className="product-page__add-to-cart cta primary add-to-cart-container"
