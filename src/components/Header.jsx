@@ -138,6 +138,7 @@ const Header = () => {
               </span>
             </div>
             <button
+              type="button"
               className="icon-button remove"
               onClick={() => handleDeleteItem(0)}
             >
@@ -146,7 +147,12 @@ const Header = () => {
                 alt="Trashcan icon"
               />
             </button>
-            <button className="cta primary col-span-3">Checkout</button>
+            <button
+              type="button"
+              className="cta primary col-span-3"
+            >
+              Checkout
+            </button>
           </div>
         )}
       </dialog>

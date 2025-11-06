@@ -88,8 +88,8 @@ const ProductImage = ({ openViewBox, isOpen }) => {
       {/* Navigation buttons */}
       <nav className="carousel-navigation flex">
         <button
-          className="nav-prev"
           type="button"
+          className="nav-prev"
           onClick={slideLeft}
         >
           <img
@@ -98,8 +98,8 @@ const ProductImage = ({ openViewBox, isOpen }) => {
           />
         </button>
         <button
-          className="nav-next"
           type="button"
+          className="nav-next"
           onClick={slideRight}
         >
           <img

@@ -45,6 +45,7 @@ const ViewBox = ({ children, isOpen, close }) => {
     >
       <div className="dialog-header flex justify-end mb-6">
         <button
+          type="button"
           className="close-button"
           aria-label="Close viewbox"
           onClick={handleCloseClick}
