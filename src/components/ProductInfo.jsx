@@ -22,7 +22,7 @@ const ProductInfo = () => {
     return () => clearTimeout(timer);
   }, [quantity]);
 
-  const reduceQuantity = (ev) => {
+  const reduceQuantity = () => {
     if (quantity > 1) setQuantity(quantity - 1);
   };
 
