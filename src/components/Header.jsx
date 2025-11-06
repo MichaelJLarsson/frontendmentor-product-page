@@ -83,6 +83,8 @@ const Header = () => {
         className="user-avatar"
         aria-label="User avatar"
       />
+
+      {/* Mobile menu */}
       <Sidebar
         open={isSidebarOpen}
         handleClose={handleMenuClick}
