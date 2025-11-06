@@ -188,7 +188,7 @@ nav ul {
 
 .cta {
   background-color: var(--cta-bg);
-  color: var(--cta-color, --foreground-color);
+  color: var(--cta-color, var(--foreground-color));
   width: 100%;
   height: 50px;
   display: flex;
